@@ -97,7 +97,7 @@ The TabsFragment handles:
 	- Select your App module in the left, select the tab "Dependencies".
 	- click the "+" button and select "Module dependency".
     - Select the ":basicFramework" dependency and click OK.
-	 <img src="screenshots/dependencies.jpg" width=500px/>
+	 <img src="screenshots/dependencies2.jpg" width=500px/>
 
 6. To support device rotation: Edit your App's AndroidManifest.xml file and, in all the `<activity>` tags, add the `android:configChanges` attribute: 
 ```xml
@@ -221,7 +221,7 @@ public BFMenuItem(String pTitle, Integer pIcon, BFMenuItemType pMenuItemType,
 BFMenuItemListener aListener)   
 ```
 | Parameter| Type | Description |
-|--------|--------|
+|--------|--------|--------|
 |pTitle |String|Title of the item|
 |pIcon |Integer|(optional) Icon of the item. Set 0 if none. If an icon is set it will be shown as an icon when SHOW_AS_ACTION is set, if not it will be shown as plain text, When SHOW_AS_MENUITEM is set, it will always be shown as plain text.|
 |pMenuItemType |BFMenuItemType|SHOW_AS_ACTION is always visible, SHOW_AS_MENUITEM is only visible in the ... popup menu, SHOW_AS_ACTION_IF_ROOM is visible if room|
