@@ -22,7 +22,7 @@ It contains three basic tools:
 <div style="page-break-after:always;"></div>
 
 ## 1. NavigationActivity
-![](screenshots/navigationActivity.jpg)
+![](screenshots/navigationactivity.jpg)
 <center>*NavigationActivity in phones* </center> 
 
 ![](screenshots/tabletscreenshot.jpg)
@@ -69,7 +69,7 @@ ListFragment is a Fragment that contains a ListView with the following features:
 
 ## 3. TabsFragment
 
-![](screenshots/tabsActivity.jpg)
+![](screenshots/tabsactivity.jpg)
 
 The TabsFragment class implements a specialized Fragment that manages a tab-style selection interface. This tab bar interface displays tabs at the top of the window for selecting between different Fragments. It must be subclassed to implement abstract methods.
 
@@ -87,7 +87,7 @@ The TabsFragment handles:
 1. Download the example project.
 2. Open your existing project or create a new one (by clicking "File - New Project - Empty Activity").
 3. Add the Module in your existing project. In Android Studio this is done by selecting "File - New - Import Module..."
-![alt-text-1](screenshots/importModule.jpg "title-1")
+![alt-text-1](screenshots/importmodule.jpg "title-1")
 
 4. Set the Source directory to the "basicframework" folder inside the example project you just downloaded, and click "Finish" (the entire folder will be copied to your project, so you don't need to move it)
 <img src="screenshots/newmodule.jpg" width=500px/>
@@ -159,8 +159,10 @@ You can present a new fragment (with a nice animation) by calling the **pushFrag
 ```java
 public void pushFragment(Fragment newFragment, animationType animation, boolean showAsDetailFragmentIfPossible)
 ```
+
+
 | Parameter| Type | Description |
-|--------|--------|
+|--------|--------|--------|
 |**newFragment** |Fragment|New Fragment that will be presented|
 |**animation** |animationType| Animation type enum: RIGHT_TO_LEFT, BOTTOM_TO_TOP, FLIP|
 |**showAsDetailFragmentIfPossible** |boolean|If set as True, the user is in a Tablet, and you are using a master-detail layout, the Fragment will be shown in the detail Fragment (the panel in the right)![](screenshots/tabletscreenshot.jpg)|
@@ -179,11 +181,11 @@ nav.pushFragment(f,NavigationActivity.animationType.RIGHT_TO_LEFT,false);
 You don't have to worry about implementing the back button behaviour. This is handled automatically by the NavigationActivity class.
 
 ###Setting the ActionBar menu
-| ![alt-text-1](screenshots/actionBar_text.jpg "title-1") | ![alt-text-1](screenshots/actionBar_icon.jpg "title-1") |
+| ![alt-text-1](screenshots/actionbar_text.jpg "title-1") | ![alt-text-1](screenshots/actionbar_icon.jpg "title-1") |
 |--------|--------|
 |*ActionBar with one text button*        |   *ActionBar with one icon button*     |
 
-| ![alt-text-1](screenshots/actionBar_search.jpg "title-1") | ![alt-text-1](screenshots/actionBar_performingsearch.jpg "title-1") |
+| ![alt-text-1](screenshots/actionbar_search.jpg "title-1") | ![alt-text-1](screenshots/actionBar_performingsearch.jpg "title-1") |
 |--------|--------|
 |*ActionBar with a search widget and a dropdown with more items*      |   *This is how the search widget looks like when is clicked*    |
 
