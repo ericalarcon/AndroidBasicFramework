@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <EditText
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:height="50dp"
+        android:minHeight="50dp"
+        android:id="@+id/editText"
+        android:hint="Insert text"
+        android:lines="1"
+        android:maxLines="1"
+        android:textStyle="normal"
+        android:allowUndo="false"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/colorMainText"
+
+
+       />
+
+    <View
+        android:paddingTop="20dp"
+        android:id="@+id/rowSeparator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ddd"
+
+        android:layout_below="@+id/editText"
+        android:layout_alignLeft="@+id/editText"
+        android:layout_alignStart="@+id/editText" />
+
+</RelativeLayout>

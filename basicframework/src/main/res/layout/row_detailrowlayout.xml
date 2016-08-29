@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/rowText"
+        android:layout_marginLeft="25dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/rowHeader"
+        android:layout_toRightOf="@+id/rowImage"
+        android:layout_toEndOf="@+id/rowImage"
+        android:layout_marginBottom="0dp"
+        android:lines="1"
+        android:paddingRight="40dp"
+        android:textColor="@color/colorMainText"
+        />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:scaleType="centerInside"
+        android:id="@+id/rowImage"
+        android:src="@mipmap/dummy_file_icon"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+
+
+        />
+
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rowDisclosureIndicator"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:src="@mipmap/disclosure"
+        android:soundEffectsEnabled="false"
+        android:layout_marginTop="22dp"
+        android:layout_marginRight="10dp"
+        android:foregroundGravity="center_vertical"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/rowDetail"
+        android:layout_below="@+id/rowText"
+        android:layout_alignLeft="@+id/rowText"
+        android:layout_alignStart="@+id/rowText"
+        android:lines="1"
+        android:paddingRight="40dp"
+        android:textColor="@color/colorSecondaryText"/>
+
+    <View
+        android:id="@+id/rowSeparator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ddd"
+
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/rowDetail"
+        android:layout_alignLeft="@+id/rowDetail"
+        android:layout_alignStart="@+id/rowDetail" />
+
+
+</RelativeLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    >
+
+    <LinearLayout
+        android:id="@+id/toolbarHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <include
+            layout="@layout/toolbar"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize" />
+
+        <FrameLayout
+            android:id="@+id/toolbarDivider"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#fff"
+            android:visibility="visible" />
+
+        <include
+            android:id="@+id/secondaryToolbar"
+            layout="@layout/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".6"
+            android:minHeight="?attr/actionBarSize" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_below="@id/toolbarHolder"
+        android:id="@+id/frameMaster"
+        android:layout_width="400dp"
+        android:layout_height="match_parent"
+        />
+
+    <FrameLayout
+        android:layout_below="@id/toolbarHolder"
+        android:id="@+id/frameDetail"
+        android:minWidth="400dp"
+        android:maxWidth="1000dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/frameMaster"
+        android:layout_toEndOf="@+id/frameMaster" />
+
+</RelativeLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_alignParentTop="true"
+    android:minHeight="?attr/actionBarSize"
+    android:background="@color/colorPrimary"
+    app:titleTextColor="#fff"
+    app:subtitleTextColor="#fff"
+    android:foregroundTint="#fff"
+    android:foregroundTintMode="src_over"
+    />

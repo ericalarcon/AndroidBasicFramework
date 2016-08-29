@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Navigation Activity</string>
+    <integer name="flipTime">500</integer>
+    <integer name="flipTimeHalf">250</integer>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
