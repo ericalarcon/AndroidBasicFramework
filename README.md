@@ -185,7 +185,7 @@ You don't have to worry about implementing the back button behaviour. This is ha
 |--------|--------|
 |*ActionBar with one text button*        |   *ActionBar with one icon button*     |
 
-| ![alt-text-1](screenshots/actionbar_search.jpg "title-1") | ![alt-text-1](screenshots/actionBar_performingsearch.jpg "title-1") |
+| ![alt-text-1](screenshots/actionbar_search.jpg "title-1") | ![alt-text-1](screenshots/actionbar_performingsearch.jpg "title-1") |
 |--------|--------|
 |*ActionBar with a search widget and a dropdown with more items*      |   *This is how the search widget looks like when is clicked*    |
 
