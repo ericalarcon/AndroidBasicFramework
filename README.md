@@ -22,10 +22,10 @@ It contains three basic tools:
 <div style="page-break-after:always;"></div>
 
 ## 1. NavigationActivity
-![](screenshots/navigationActivity.png)
+![](screenshots/navigationActivity.jpg)
 <center>*NavigationActivity in phones* </center> 
 
-![](screenshots/tabletscreenshot.png)
+![](screenshots/tabletscreenshot.jpg)
 <center> *NavigationActivity in tablets (combined with TabsFragment)*</center> 
 
 The NavigationActivity class implements a specialized Activity that manages the navigation of hierarchical content. A NavigationActivity object manages the currently displayed screens using the navigation stack, which is represented by an array of Fragments. The first Fragment in the array is the root Fragment. The last Fragment in the array is the Fragment currently being displayed. You add and remove Fragments from the stack using the methods of this class. It must be subclassed to implement abstract methods.
@@ -45,9 +45,9 @@ The NavigationActivity class handles:
 
 ## 2. ListFragment
 
-| ![alt-text-1](screenshots/sections.png "title-1") |  ![alt-text-2](screenshots/selection.png "title-2") |
+| ![alt-text-1](screenshots/sections.jpg "title-1") |  ![alt-text-2](screenshots/selection.jpg "title-2") |
 |--------|--------|
-|     ![alt-text-1](screenshots/loading.png "title-1")   |   ![alt-text-1](screenshots/pullrefresh.png "title-1")     |
+|     ![alt-text-1](screenshots/loading.jpg "title-1")   |   ![alt-text-1](screenshots/pullrefresh.jpg "title-1")     |
  
     
 
@@ -69,7 +69,7 @@ ListFragment is a Fragment that contains a ListView with the following features:
 
 ## 3. TabsFragment
 
-![](screenshots/tabsActivity.png)
+![](screenshots/tabsActivity.jpg)
 
 The TabsFragment class implements a specialized Fragment that manages a tab-style selection interface. This tab bar interface displays tabs at the top of the window for selecting between different Fragments. It must be subclassed to implement abstract methods.
 
@@ -87,10 +87,10 @@ The TabsFragment handles:
 1. Download the example project.
 2. Open your existing project or create a new one (by clicking "File - New Project - Empty Activity").
 3. Add the Module in your existing project. In Android Studio this is done by selecting "File - New - Import Module..."
-![alt-text-1](screenshots/importModule.png "title-1")
+![alt-text-1](screenshots/importModule.jpg "title-1")
 
 4. Set the Source directory to the "basicframework" folder inside the example project you just downloaded, and click "Finish" (the entire folder will be copied to your project, so you don't need to move it)
-<img src="screenshots/newmodule.png" width=500px/>
+<img src="screenshots/newmodule.jpg" width=500px/>
 
 5.  Add the BasicFramework dependency to your App. To do so:
 	- Click "File - Project Structure".
@@ -163,7 +163,7 @@ public void pushFragment(Fragment newFragment, animationType animation, boolean 
 |--------|--------|
 |**newFragment** |Fragment|New Fragment that will be presented|
 |**animation** |animationType| Animation type enum: RIGHT_TO_LEFT, BOTTOM_TO_TOP, FLIP|
-|**showAsDetailFragmentIfPossible** |boolean|If set as True, the user is in a Tablet, and you are using a master-detail layout, the Fragment will be shown in the detail Fragment (the panel in the right)![](screenshots/tabletscreenshot.png)|
+|**showAsDetailFragmentIfPossible** |boolean|If set as True, the user is in a Tablet, and you are using a master-detail layout, the Fragment will be shown in the detail Fragment (the panel in the right)![](screenshots/tabletscreenshot.jpg)|
 
 
 Since you can access the activity from any Fragment with the getActivity() method, **you can show a new Fragment from the currently displaying Fragment**.
@@ -179,11 +179,11 @@ nav.pushFragment(f,NavigationActivity.animationType.RIGHT_TO_LEFT,false);
 You don't have to worry about implementing the back button behaviour. This is handled automatically by the NavigationActivity class.
 
 ###Setting the ActionBar menu
-| ![alt-text-1](screenshots/actionBar_text.png "title-1") | ![alt-text-1](screenshots/actionBar_icon.png "title-1") |
+| ![alt-text-1](screenshots/actionBar_text.jpg "title-1") | ![alt-text-1](screenshots/actionBar_icon.jpg "title-1") |
 |--------|--------|
 |*ActionBar with one text button*        |   *ActionBar with one icon button*     |
 
-| ![alt-text-1](screenshots/actionBar_search.png "title-1") | ![alt-text-1](screenshots/actionBar_performingsearch.png "title-1") |
+| ![alt-text-1](screenshots/actionBar_search.jpg "title-1") | ![alt-text-1](screenshots/actionBar_performingsearch.jpg "title-1") |
 |--------|--------|
 |*ActionBar with a search widget and a dropdown with more items*      |   *This is how the search widget looks like when is clicked*    |
 
@@ -392,7 +392,7 @@ public void onViewCreated()
 
 ###public String title()
 You have to return the title that will show in the ActionBar
-<img src="screenshots/actionbar_icon_title.png" width=300px/>
+<img src="screenshots/actionbar_icon_title.jpg" width=300px/>
 
 ###public UniversalRowAdapter getAdapter(Context context, ListView listview)
 You have to return a UniversalRowAdapter object, that must implement all the abstract methods:
@@ -508,7 +508,7 @@ All the methods that you have to implement are pretty self-descriptive, the more
 Simply create a `new BasicRowAdapter` (or any other) and implement its abstract methods.
 
 
-<img src="screenshots/adapters.png" width=300px/>
+<img src="screenshots/adapters.jpg" width=300px/>
 
 ###public void onViewCreated()
 You can put your initialization code here. This is a good spot to instanciate your ListAdapters (BasicRowAdapter, DetailRowAdapter, etc.)
