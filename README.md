@@ -554,6 +554,8 @@ This framework is under the [Creative Commons Attribution 3.0 License](https://c
 
 In exchange, just give me credit in your app (name and link to github).
 
+#Special thanks
+This Framework was developed partly in the company where I work: [Edor Team S.L.](http://www.edorteam.com/)
 
 #Future work
 - Add a **NavigationDrawer Fragment** (even though I don't like this navigation pattern, because it discourages information architecture and has lower discoverability)
