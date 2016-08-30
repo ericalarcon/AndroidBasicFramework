@@ -14,11 +14,11 @@
 
 It contains three basic tools:
 
-- NavigationActivity
-- ListFragment
-- TabsFragment
+- **NavigationActivity**: manages the navigation of hierarchical content (similarly to Apple's UINAvigationViewController) and the ActionBar menus for the current view.
+- **ListFragment**: contains a flexible ListView with sections and a multi-select mode.
+- **TabsFragment**: manages a tab-style selection interface.
 
-
+Let's see it with more detail:
 <div style="page-break-after:always;"></div>
 
 ## 1. NavigationActivity
@@ -393,7 +393,7 @@ public void onViewCreated()
 
 
 ###public String title()
-You have to return the title that will show in the ActionBar
+You have to return the title that will show in the ActionBar<br/>
 <img src="screenshots/actionbar_icon_title.jpg" width=300px/>
 
 ###public UniversalRowAdapter getAdapter(Context context, ListView listview)
