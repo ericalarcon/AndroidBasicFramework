@@ -594,5 +594,5 @@ This Framework was developed partly in the company where I work: [Edor Team S.L.
 #Future work
 - Add a **NavigationDrawer Fragment** (even though I don't like this navigation pattern, because it discourages information architecture and has lower discoverability)
 - Add **more RowAdapters**
-- Add **FloatingActionButton** to ListFragment
+- ~~Add **FloatingActionButton** to ListFragment~~
 - Add **ScrollingFragment** template
