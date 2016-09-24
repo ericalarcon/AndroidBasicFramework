@@ -107,6 +107,10 @@ public class AppTabOne extends ListFragment {
         };
     }
 
+    @Override
+    public FloatingButton floatingActionButton() {
+        return null;
+    }
 
 
     @Override

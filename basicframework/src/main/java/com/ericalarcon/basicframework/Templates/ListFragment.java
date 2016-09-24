@@ -1,14 +1,17 @@
 package com.ericalarcon.basicframework.Templates;
 
-
 import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-
 import com.ericalarcon.basicframework.R;
 import com.ericalarcon.basicframework.RowAdapters.UniversalRowAdapter;
 @SuppressWarnings("unused")
@@ -36,13 +39,13 @@ public abstract class ListFragment extends Fragment {
     //abstract functions that must be implemented by ListFragment child
     public abstract String title(); //must return the title that will be shown in the ActionBar
     public abstract UniversalRowAdapter getAdapter(Context context, ListView listview);
+    public abstract FloatingButton floatingActionButton();
     public abstract void onCreateFinished();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         setHasOptionsMenu(true); //in case we want to add some menus to ActionBar
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -67,6 +70,24 @@ public abstract class ListFragment extends Fragment {
         //reset the actionBar to refresh its contents
         getActivity().invalidateOptionsMenu();
 
+
+        FloatingActionButton fab = (FloatingActionButton) getView().findViewById(R.id.fab);
+
+        if(floatingActionButton()== null){
+            fab.hide();
+        }
+        else{
+            fab.setImageResource(floatingActionButton().buttonImage());
+
+            fab.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    floatingActionButton().onClick();
+                }
+            });
+        }
+
+
         onCreateFinished();
     }
 
@@ -88,5 +109,8 @@ public abstract class ListFragment extends Fragment {
 
 
 
-
+    public abstract class FloatingButton{
+        public abstract void onClick();
+        public abstract Integer buttonImage();
+    }
 }

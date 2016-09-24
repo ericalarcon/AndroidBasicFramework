@@ -5,6 +5,8 @@ import android.content.res.Configuration;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
@@ -16,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.AnimationUtils;
 
 import com.ericalarcon.basicframework.R;
 
@@ -162,6 +165,8 @@ public abstract class NavigationActivity extends AppCompatActivity implements Se
             // A warning is displayed
             Log.w("BasicFramework WARNING", "*************************\nTO SUPPORT INTERFACE ROTATION UPDATE YOUR AndroidManifest.xml FILE. SET: \n android:configChanges=\"orientation|keyboardHidden|screenSize\" \n IN THE <activity> TAG \n *************************\n");
         }
+
+
     }
 
     /**
@@ -226,8 +231,12 @@ public abstract class NavigationActivity extends AppCompatActivity implements Se
             //show the back arrow in the actionBar
             if(getSupportActionBar() != null)
                 getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+
         }
     }
+
 
     public void pushFragment(Fragment newFragment, animationType animation) {
         pushFragment(newFragment,animation,false);
@@ -556,6 +565,7 @@ public abstract class NavigationActivity extends AppCompatActivity implements Se
                     return false;
                 }
             });
+
         }
 
     }

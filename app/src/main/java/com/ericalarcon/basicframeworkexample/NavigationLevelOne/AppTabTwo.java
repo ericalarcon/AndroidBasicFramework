@@ -117,7 +117,10 @@ public class AppTabTwo extends ListFragment{
         };
     }
 
-
+    @Override
+    public FloatingButton floatingActionButton() {
+        return null;
+    }
 
     @Override
     public void onCreateFinished() {

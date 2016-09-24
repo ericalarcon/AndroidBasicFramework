@@ -1,6 +1,7 @@
 package com.ericalarcon.basicframeworkexample.NavigationLevelOne;
 
 import android.app.Fragment;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 
 import com.ericalarcon.basicframework.Templates.BFMenu;
@@ -22,20 +23,20 @@ public class AppTabsFragment extends TabsFragment{
             tabMenu1.addItem(new BFMenuItem("More actions in Tab1", 0, BFMenuItem.BFMenuItemType.SHOW_AS_MENUITEM, new BFMenuItem.BFMenuItemListener() {
                 @Override
                 public void onClick() {
-
+                    Snackbar.make(getView(),"Menu item clicked",Snackbar.LENGTH_SHORT).show();
                 }
             }));
             tabMenu1.addItem(new BFMenuItem("More actions in Tab1", 0, BFMenuItem.BFMenuItemType.SHOW_AS_MENUITEM, new BFMenuItem.BFMenuItemListener() {
                 @Override
                 public void onClick() {
-
+                    Snackbar.make(getView(),"Menu item clicked",Snackbar.LENGTH_SHORT).show();
                 }
             }));
 
             tabMenu1.addItem(new BFMenuItem("Action1", 0, BFMenuItem.BFMenuItemType.SHOW_AS_ACTION, new BFMenuItem.BFMenuItemListener() {
                 @Override
                 public void onClick() {
-
+                    Snackbar.make(getView(),"Action1 clicked",Snackbar.LENGTH_SHORT).show();
                 }
             }));
 
@@ -53,20 +54,20 @@ public class AppTabsFragment extends TabsFragment{
             tabMenu2.addItem(new BFMenuItem("More actions in Tab2", 0, BFMenuItem.BFMenuItemType.SHOW_AS_MENUITEM, new BFMenuItem.BFMenuItemListener() {
                 @Override
                 public void onClick() {
-
+                    Snackbar.make(getView(),"Menu item clicked",Snackbar.LENGTH_SHORT).show();
                 }
             }));
             tabMenu2.addItem(new BFMenuItem("More actions in Tab2", 0, BFMenuItem.BFMenuItemType.SHOW_AS_MENUITEM, new BFMenuItem.BFMenuItemListener() {
                 @Override
                 public void onClick() {
-
+                    Snackbar.make(getView(),"Menu item clicked",Snackbar.LENGTH_SHORT).show();
                 }
             }));
 
             tabMenu2.addItem(new BFMenuItem("Action2", 0, BFMenuItem.BFMenuItemType.SHOW_AS_ACTION, new BFMenuItem.BFMenuItemListener() {
                 @Override
                 public void onClick() {
-
+                    Snackbar.make(getView(),"Action2 clicked",Snackbar.LENGTH_SHORT).show();
                 }
             }));
         }

@@ -2,9 +2,9 @@
 **Author:** Eric Alarcón Cochin
 [eric@edorteam.com](mailto:eric@edorteam.com)
 
-**Version:**  0.7
+**Version:**  0.8
 **Publishing date:** August 29, 2016
-
+**Updated:** September 24, 2016
 
 ---
 #Introduction
@@ -48,6 +48,7 @@ The NavigationActivity class handles:
 | ![alt-text-1](screenshots/sections.jpg "title-1") |  ![alt-text-2](screenshots/selection.jpg "title-2") |
 |--------|--------|
 |     ![alt-text-1](screenshots/loading.jpg "title-1")   |   ![alt-text-1](screenshots/pullrefresh.jpg "title-1")     |
+|![](screenshots/floatingActionButton.jpg)| |
  
     
 
@@ -377,24 +378,57 @@ public class myListFragment extends ListFragment {
 
     }
 
-    @Override
-    public void onViewCreated() {
-		//event triggered after the view is created
+	@Override
+    public FloatingButton floatingActionButton() {
+        //return a new FloatingButton instance 
+        //or null if you don't want a FloatingButton
     }
+    
+    @Override
+    public void onCreateFinished() {
+		//event triggered after the view is created
+    } 
 }
 ```
 
-You will have to implement three methods:
+You will have to implement four methods:
 ```java
 public String title()
+public FloatingButton floatingActionButton()
 public UniversalRowAdapter getAdapter(Context context, ListView listview)
-public void onViewCreated()
+public void onCreateFinished()
 ```
 
 
 ###public String title()
 You have to return the title that will show in the ActionBar<br/>
 <img src="screenshots/actionbar_icon_title.jpg" width=300px/>
+
+###public String floatingActionButton()
+![](screenshots/floatingActionButton.jpg)
+*This is a Floating Action Button*
+
+If you want to show a floating action button, you simply have to return a new FloatingButton object, that have to implement two abstract methods that will define its aspect and behaviour.
+
+Example:
+```java
+public FloatingButton floatingActionButton() {
+    //return a new FloatingButton that implements the abstract methods onClick() and buttonImage()
+    return new FloatingButton() {
+        @Override
+        public void onClick() {
+            //action that will trigger
+            Snackbar.make(getView(),"Action button clicked",Snackbar.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public Integer buttonImage() {
+            //image that will be shown in the button
+            return com.ericalarcon.basicframework.R.drawable.dummy_drawable;
+        }
+    };
+}
+```
 
 ###public UniversalRowAdapter getAdapter(Context context, ListView listview)
 You have to return a UniversalRowAdapter object, that must implement all the abstract methods:
@@ -512,7 +546,7 @@ Simply create a `new BasicRowAdapter` (or any other) and implement its abstract 
 
 <img src="screenshots/adapters.jpg" width=300px/>
 
-###public void onViewCreated()
+###public void onCreateFinished()
 You can put your initialization code here. This is a good spot to instanciate your ListAdapters (BasicRowAdapter, DetailRowAdapter, etc.)
 
 ###Other interesting methods of the UniversalRowAdapter class

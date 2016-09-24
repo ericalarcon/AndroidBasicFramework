@@ -1,6 +1,7 @@
 package com.ericalarcon.basicframeworkexample.NavigationLevelTwo;
 
 import android.content.Context;
+import android.support.design.widget.Snackbar;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
@@ -18,7 +19,7 @@ import java.util.ArrayList;
  * The second level of navigation of this example
  */
 public class SecondLevelList extends ListFragment{
-    //variable that we will instanciate before pushing the fragment
+    //variable that we will instantiate before pushing the fragment
     //this is how you can pass information between fragments, but you can use
     //intents if you want to
     public String instantiatedInLevelOne;
@@ -161,6 +162,24 @@ public class SecondLevelList extends ListFragment{
             @Override
             public void onSelectionModeCancelled() {
 
+            }
+        };
+    }
+
+    @Override
+    public FloatingButton floatingActionButton() {
+        //return a new FloatingButton that implements the abstract methods onClick() and buttonImage()
+        return new FloatingButton() {
+            @Override
+            public void onClick() {
+                //action that will trigger
+                Snackbar.make(getView(),"Action button clicked",Snackbar.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public Integer buttonImage() {
+                //image that will be shown in the button
+                return com.ericalarcon.basicframework.R.drawable.dummy_drawable;
             }
         };
     }

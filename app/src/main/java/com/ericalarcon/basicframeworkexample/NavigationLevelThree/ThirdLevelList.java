@@ -1,6 +1,7 @@
 package com.ericalarcon.basicframeworkexample.NavigationLevelThree;
 
 import android.content.Context;
+import android.support.design.widget.Snackbar;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
@@ -27,13 +28,13 @@ public class ThirdLevelList extends ListFragment{
             menu1.addItem(new BFMenuItem("More actions", 0, BFMenuItem.BFMenuItemType.SHOW_AS_MENUITEM, new BFMenuItem.BFMenuItemListener() {
                 @Override
                 public void onClick() {
-
+                    Snackbar.make(getView(),"Menu item clicked",Snackbar.LENGTH_SHORT).show();
                 }
             }));
             menu1.addItem(new BFMenuItem("More actions 2", 0, BFMenuItem.BFMenuItemType.SHOW_AS_MENUITEM, new BFMenuItem.BFMenuItemListener() {
                 @Override
                 public void onClick() {
-
+                    Snackbar.make(getView(),"Menu item clicked",Snackbar.LENGTH_SHORT).show();
                 }
             }));
 
@@ -148,6 +149,11 @@ public class ThirdLevelList extends ListFragment{
 
             }
         };
+    }
+
+    @Override
+    public FloatingButton floatingActionButton() {
+        return null;
     }
 
     @Override
