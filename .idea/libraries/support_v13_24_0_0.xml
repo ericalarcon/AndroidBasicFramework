@@ -1,12 +1,14 @@
 <component name="libraryTable">
   <library name="support-v13-24.0.0">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/support-v13/24.0.0/jars/libs/internal_impl-24.0.0.jar!/" />
-      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/support-v13/24.0.0/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/support-v13/24.0.0/res" />
+      <root url="jar://$PROJECT_DIR$/basicframework/build/intermediates/exploded-aar/com.android.support/support-v13/24.0.0/jars/libs/internal_impl-24.0.0.jar!/" />
+      <root url="file://$PROJECT_DIR$/basicframework/build/intermediates/exploded-aar/com.android.support/support-v13/24.0.0/res" />
+      <root url="jar://$PROJECT_DIR$/basicframework/build/intermediates/exploded-aar/com.android.support/support-v13/24.0.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
+      <root url="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/support-v13/24.0.0/support-v13-24.0.0-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/support-v13/24.0.0/dbc0211c7f8820cf9b5994f5d00dfc49dfbd98c4/support-v13-24.0.0-sources.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/support-v13/24.0.0/dbc0211c7f8820cf9b5994f5d00dfc49dfbd98c4/support-v13-24.0.0-sources.jar!/" />
     </SOURCES>
   </library>

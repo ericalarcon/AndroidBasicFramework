@@ -1,5 +1,4 @@
 package com.ericalarcon.basicframework.RowAdapters;
-
 import android.content.Context;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -8,6 +7,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,14 +19,11 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import com.ericalarcon.basicframework.R;
-
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 
-
+@SuppressWarnings({"unused" , "WeakerAccess"})
 /**
  * Created by erica on 15/07/2016.
  * custom adapter for rows that handles the following:
@@ -48,7 +45,7 @@ public abstract class UniversalRowAdapter extends ArrayAdapter<String> {
     private Integer mustAnimateRowId = -1; //variable to store the row id that must be animated. This is for the "select/check" animation
     private Integer fastClicksNumber = 0; //variable to control if the user has just clicked a row (in order to avoid an accidental double click)
     private Integer lastItemSelected = -1;
-    private HashMap<Integer,Boolean> itemIsSelected  = new HashMap<>(); //rows that are selected when in multiple selection mode
+    private SparseBooleanArray itemIsSelected  = new SparseBooleanArray(); //rows that are selected when in multiple selection mode. SparseArray similar to HashMap but more efficient.
     @NonNull
     private Boolean selectionModeIsActive(){
         return itemIsSelected.size() > 0;
@@ -125,7 +122,7 @@ public abstract class UniversalRowAdapter extends ArrayAdapter<String> {
                 selectedIndex = getSectionedPosition(getPositionIgnoringHeaders(i));
 
                 if(selectionModeIsActive()){
-                    if(itemIsSelected.get(i) == null){
+                    if(!itemIsSelected.get(i)){
                         //item is not selected. Select it
                         itemIsSelected.put(i,true); //put it in the selected data structure
                         mustAnimateRowId = i; //must animate this row (used in the getView function)
@@ -140,7 +137,7 @@ public abstract class UniversalRowAdapter extends ArrayAdapter<String> {
                     else{
                         if(!justLongClicked) {
                             //item is not selected. Deselect it
-                            itemIsSelected.remove(i); //remove from the selected data structure
+                            itemIsSelected.put(i,false); //remove from the selected data structure
                             mustAnimateRowId = i; //must animate this row (used in the getView function)
 
                             //call abstract method that must be implemented in the Fragment containing the listView
@@ -199,7 +196,7 @@ public abstract class UniversalRowAdapter extends ArrayAdapter<String> {
 
                 //call abstract method -to know if we must start multiselect on long click- that must be implemented in the Fragment containing the listView
                 if(startSelectingOnLongClick(index)){
-                    if(itemIsSelected.get(i) == null){
+                    if(!itemIsSelected.get(i)){
                         itemIsSelected.put(i,true);//put it in the selected data structure
                         mustAnimateRowId = i;//must animate this row (used in the getView function)
                         getView(i, view, parentListView); //refresh the row
@@ -238,7 +235,8 @@ public abstract class UniversalRowAdapter extends ArrayAdapter<String> {
      * Row view
      */
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    @NonNull
+    public View getView(int position, View convertView,@NonNull ViewGroup parent) {
         Integer numberOfSections = numberOfSections();
         Integer numberOfRowsInPreviousSections = 0;
         Integer numberOfRows = 0;
@@ -249,7 +247,7 @@ public abstract class UniversalRowAdapter extends ArrayAdapter<String> {
             if(convertView != null && convertView.getClass().isAssignableFrom(RelativeLayout.class)){
                 final RelativeLayout rl = (RelativeLayout)convertView; //must be a relative layout or else it will fail! TO-DO: check if is relative or linear layout...
 
-                if(itemIsSelected.get(position) != null){ //item is selected!
+                if(!itemIsSelected.get(position)){ //item is selected!
 
                     //if the check icon has been added previously, we can fetch it...
                     int id=100+1; //mysterious way to make findViewById accept 101 parameter
@@ -434,7 +432,7 @@ public abstract class UniversalRowAdapter extends ArrayAdapter<String> {
         View returnValue =  adapter.getView(position - currentNumberOfHeaders-currentNumberOfFooters ,convertView,parent);
 
         //additional check to add/remove background color indicating selection, or else it can be glitchy because of the recycled views
-        if(itemIsSelected.get(position) == null){
+        if(!itemIsSelected.get(position)){
             returnValue.setBackgroundColor(0x00000000);
         }
         else{
@@ -541,19 +539,7 @@ public abstract class UniversalRowAdapter extends ArrayAdapter<String> {
             position = pPosition;
         }
     }
-    /*public void addItems(Integer numberOfItems){
 
-        if (realListSize == 0){
-            numberOfItems = numberOfItems+1+(numberOfSections()*2);
-            realListSize += numberOfItems;
-        }
-        else{
-            realListSize += numberOfItems;
-        }
-
-        addAll(new ArrayList<String>(Arrays.asList(new String[numberOfItems])));
-        notifyDataSetChanged();
-    }*/
 
 
 }

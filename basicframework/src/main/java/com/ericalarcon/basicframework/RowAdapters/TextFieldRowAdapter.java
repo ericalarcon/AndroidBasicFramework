@@ -1,19 +1,18 @@
 package com.ericalarcon.basicframework.RowAdapters;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.ericalarcon.basicframework.R;
 
 import java.util.Arrays;
 
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused" , "WeakerAccess"})
 
 /**
  * Created by erica on 15/07/2016.
@@ -32,9 +31,9 @@ public abstract class TextFieldRowAdapter extends ArrayAdapter<String> {
     A ViewHolder class is typically a static inner class in your adapter which holds references to the relevant views. in your layout. This reference is assigned to the row view as a tag via the setTag() method.
     If we receive a convertView object, we can get the instance of the ViewHolder via the getTag() method and assign the new attributes to the views via the ViewHolder reference.
     While this sounds complex this is approximately 15 % faster then using the findViewById() method.*/
-    static class ViewHolder {
-        public EditText textBox;
-        public View rowSeparator;
+    private static class ViewHolder {
+        EditText textBox;
+        View rowSeparator;
     }
 
 
@@ -59,7 +58,8 @@ public abstract class TextFieldRowAdapter extends ArrayAdapter<String> {
      * Row view
      */
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    @NonNull
+    public View getView(int position, View convertView,@NonNull ViewGroup parent) {
         //get the text with this abstract method, which will usually be implemented in the Fragment containing the listView
         String hint = getPlaceholder(position);
         if(hint == null) hint = "";

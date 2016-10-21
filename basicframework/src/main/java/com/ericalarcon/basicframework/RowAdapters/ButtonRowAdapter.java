@@ -1,5 +1,6 @@
 package com.ericalarcon.basicframework.RowAdapters;
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +11,7 @@ import com.ericalarcon.basicframework.R;
 
 import java.util.Arrays;
 
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused" , "WeakerAccess"})
 /**
  * Created by erica on 15/07/2016.
  * custom adapter for rows that work as a full-width button
@@ -25,12 +26,12 @@ public abstract class ButtonRowAdapter  extends ArrayAdapter<String> {
     A ViewHolder class is typically a static inner class in your adapter which holds references to the relevant views. in your layout. This reference is assigned to the row view as a tag via the setTag() method.
     If we receive a convertView object, we can get the instance of the ViewHolder via the getTag() method and assign the new attributes to the views via the ViewHolder reference.
     While this sounds complex this is approximately 15 % faster then using the findViewById() method.*/
-    static class ViewHolder {
-        public TextView text;
-        public View rowSeparator;
+    private static class ViewHolder {
+        TextView text;
+        View rowSeparator;
     }
 
-    public ButtonRowAdapter(Context context) {
+    protected ButtonRowAdapter(Context context) {
         //pass an empty string to the super constructor because we don't need to know the list of items
         //this is managed by UniversalRowAdapter class
         super(context,-1, Arrays.asList(new String[0]));
@@ -50,7 +51,8 @@ public abstract class ButtonRowAdapter  extends ArrayAdapter<String> {
      * Row view
      */
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    @NonNull
+    public View getView(int position, View convertView, @NonNull ViewGroup parent) {
         //get the text with this abstract method, which will usually be implemented in the Fragment containing the listView
         String rowText = getRowText(position);
         if(rowText == null) rowText = "";

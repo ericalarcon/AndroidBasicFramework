@@ -1,6 +1,7 @@
 package com.ericalarcon.basicframework.RowAdapters;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +15,7 @@ import com.ericalarcon.basicframework.R;
 
 import java.util.Arrays;
 
-@SuppressWarnings("unused")
-
+@SuppressWarnings({"unused" , "WeakerAccess"})
 /**
  * Created by erica on 15/07/2016.
  * custom adapter for rows with a single line of text, another text to the right and an optional image on the left
@@ -33,10 +33,10 @@ public abstract class SwitchRowAdapter extends ArrayAdapter<String> {
     A ViewHolder class is typically a static inner class in your adapter which holds references to the relevant views. in your layout. This reference is assigned to the row view as a tag via the setTag() method.
     If we receive a convertView object, we can get the instance of the ViewHolder via the getTag() method and assign the new attributes to the views via the ViewHolder reference.
     While this sounds complex this is approximately 15 % faster then using the findViewById() method.*/
-    static class ViewHolder {
-        public TextView text;
-        public Switch aSwich;
-        public ImageView image;
+    private static class ViewHolder {
+        TextView text;
+        Switch aSwich;
+        ImageView image;
     }
 
     public SwitchRowAdapter(Context context) {
@@ -61,7 +61,8 @@ public abstract class SwitchRowAdapter extends ArrayAdapter<String> {
      * Row view
      */
     @Override
-    public View getView(final int position, View convertView, ViewGroup parent) {
+    @NonNull
+    public View getView(final int position, View convertView,@NonNull ViewGroup parent) {
         //get the text with this abstract method, which will usually be implemented in the Fragment containing the listView
         String rowText = getRowText(position);
         if(rowText == null) rowText = "";
