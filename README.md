@@ -106,8 +106,12 @@ The TabsFragment handles:
             android:configChanges="orientation|keyboardHidden|screenSize">
 ```
 *If you add an another activity later, you must come here and add the attribute*
+<<<<<<< HEAD
 
 6. To support tablet layout: Edit your style.xml file located in res/values and, inside the `<style>` tag, add: 
+=======
+7. To support tablet layout: Edit your style.xml file located in res/values and, inside the `<style>` tag, add: 
+>>>>>>> origin/master
 ```xml
 <item name="windowActionBar">false</item>
 <item name="windowNoTitle">true</item>
@@ -115,7 +119,11 @@ The TabsFragment handles:
 <item name="android:textColorSecondary">#fff</item><!--replace color-->
 ```
 *Even if you don't want to support tablet interface, this setting is recommended to avoid warnings in the Framework*
+<<<<<<< HEAD
 4. **You are ready to go!**
+=======
+8. **You are ready to go!**
+>>>>>>> origin/master
 
 <div style="page-break-after:always;"></div>
 ##2. Using NavigationActivity
