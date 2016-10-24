@@ -2,9 +2,9 @@
 **Author:** Eric Alarcón Cochin
 [eric@edorteam.com](mailto:eric@edorteam.com)
 
-**Version:**  0.9.0
-**First publishing date:** August 29, 2016
-**Updated:** October 24, 2016
+**Version:**  0.8
+**Publishing date:** August 29, 2016
+**Updated:** September 24, 2016
 
 ---
 #Introduction
@@ -107,7 +107,7 @@ The TabsFragment handles:
 ```
 *If you add an another activity later, you must come here and add the attribute*
 
-7. To support tablet layout: Edit your style.xml file located in res/values and, inside the `<style>` tag, add: 
+6. To support tablet layout: Edit your style.xml file located in res/values and, inside the `<style>` tag, add: 
 ```xml
 <item name="windowActionBar">false</item>
 <item name="windowNoTitle">true</item>
@@ -115,8 +115,7 @@ The TabsFragment handles:
 <item name="android:textColorSecondary">#fff</item><!--replace color-->
 ```
 *Even if you don't want to support tablet interface, this setting is recommended to avoid warnings in the Framework*
-
-8. **You are ready to go!**
+4. **You are ready to go!**
 
 <div style="page-break-after:always;"></div>
 ##2. Using NavigationActivity
