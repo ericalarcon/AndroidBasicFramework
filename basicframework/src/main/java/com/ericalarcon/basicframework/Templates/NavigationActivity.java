@@ -5,8 +5,6 @@ import android.content.res.Configuration;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
@@ -18,7 +16,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.view.animation.AnimationUtils;
 
 import com.ericalarcon.basicframework.R;
 
@@ -202,6 +199,7 @@ public abstract class NavigationActivity extends AppCompatActivity implements Se
                 transaction.setCustomAnimations(R.animator.enter_from_bottom, R.animator.exit_to_top, R.animator.enter_from_top,R.animator.exit_to_bottom);
                 //changes the back arrow in the actionBar for a cross indicating "close"
                 //because the bottom to top animation indicates modal popup rather than hierarchical navigation. (just UX things)
+                //noinspection ConstantConditions
                 getSupportActionBar().setHomeAsUpIndicator(R.mipmap.ic_close);
             }
             else if(animation == animationType.FLIP){

@@ -41,7 +41,7 @@ public class ThirdLevelList extends ListFragment{
             menu1.addSearchItem(new BFMenu.BFMenuSearchListener() {
                 @Override
                 public void onSearchPressed(String query) {
-
+                    Snackbar.make(getView(),"Search pressed",Snackbar.LENGTH_SHORT).show();
                 }
 
                 @Override

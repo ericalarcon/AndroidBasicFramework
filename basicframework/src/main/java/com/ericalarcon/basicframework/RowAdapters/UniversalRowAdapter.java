@@ -247,7 +247,7 @@ public abstract class UniversalRowAdapter extends ArrayAdapter<String> {
             if(convertView != null && convertView.getClass().isAssignableFrom(RelativeLayout.class)){
                 final RelativeLayout rl = (RelativeLayout)convertView; //must be a relative layout or else it will fail! TO-DO: check if is relative or linear layout...
 
-                if(!itemIsSelected.get(position)){ //item is selected!
+                if(itemIsSelected.get(position)){ //item is selected!
 
                     //if the check icon has been added previously, we can fetch it...
                     int id=100+1; //mysterious way to make findViewById accept 101 parameter

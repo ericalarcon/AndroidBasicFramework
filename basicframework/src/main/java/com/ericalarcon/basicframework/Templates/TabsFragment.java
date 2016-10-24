@@ -8,12 +8,12 @@ import android.support.v13.app.FragmentStatePagerAdapter;
 import android.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.ericalarcon.basicframework.R;
 
-import java.util.HashMap;
 @SuppressWarnings("unused")
 /**
 
@@ -33,10 +33,10 @@ public abstract class TabsFragment extends Fragment {
     private BFMenu generalMenu;
 
     //ActionBarMenus if is dependent of the tab selected
-    private HashMap<Integer,BFMenu> menusMap;
-    public HashMap<Integer, BFMenu> getMenusMap() {
+    private SparseArray<BFMenu> menusMap;
+    public SparseArray<BFMenu> getMenusMap() {
         if(menusMap == null){
-            menusMap = new HashMap<>();
+            menusMap = new SparseArray<>();
         }
         return menusMap;
     }
@@ -54,9 +54,8 @@ public abstract class TabsFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_tabs, container, false);
         //remove the bottom shadow of the actionBar
         if(((AppCompatActivity)getActivity()).getSupportActionBar() != null)
+            //noinspection ConstantConditions
             ((AppCompatActivity)getActivity()).getSupportActionBar().setElevation(0);
-
-        //getActivity().setContentView(R.layout.fragment_tabs);
 
         pagerAdapter = new SectionsPagerAdapter(getFragmentManager());
 
@@ -81,10 +80,12 @@ public abstract class TabsFragment extends Fragment {
         //Set tab icons if necessary
         for (int i = 0; i < getTabCount(); i++) {
             if(getTabIcon(i) != null){
+                //noinspection ConstantConditions
                 tabLayout.getTabAt(i).setIcon(getTabIcon(i)); //call abstract method getTabIcon that must be implemented by the child
             }
 
             if(getTabIconTint(i) != null){
+                //noinspection ConstantConditions
                 tabLayout.getTabAt(i).getIcon().setColorFilter(getTabIconTint(i), PorterDuff.Mode.SRC_IN);//call abstract method getTabIconTint that must be implemented by the child
             }
         }
@@ -98,7 +99,7 @@ public abstract class TabsFragment extends Fragment {
 
     public class SectionsPagerAdapter extends FragmentStatePagerAdapter {
 
-        public SectionsPagerAdapter(FragmentManager fm) {
+        SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
         }
 

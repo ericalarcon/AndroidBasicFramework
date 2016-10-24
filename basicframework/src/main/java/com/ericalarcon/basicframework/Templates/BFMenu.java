@@ -23,7 +23,7 @@ public class BFMenu {
      */
     public BFMenu(BFMenuTitleListener aTitleListener){titleListener = aTitleListener;}
 
-    ArrayList<BFMenuItem> items;
+    private ArrayList<BFMenuItem> items;
     //items lazy instantiation
     public ArrayList<BFMenuItem> getItems() {
         if (items == null){
@@ -33,10 +33,10 @@ public class BFMenu {
     }
 
     //handles all search events
-    public BFMenuSearchListener searchListener;
+    BFMenuSearchListener searchListener;
 
     //handles title changes
-    public BFMenuTitleListener titleListener;
+    BFMenuTitleListener titleListener;
 
     /**
      * Add item to the menu
