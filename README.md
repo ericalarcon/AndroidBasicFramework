@@ -2,7 +2,7 @@
 **Author:** Eric Alarcón Cochin
 [eric@edorteam.com](mailto:eric@edorteam.com)
 
-**Version:**  0.8
+**Version:**  0.9.0
 **First publishing date:** August 29, 2016
 **Updated:** October 24, 2016
 
@@ -105,7 +105,7 @@ The TabsFragment handles:
 <activity android:name=".YourMainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize">
 ```
-*If you add an another activity later, you must come here and add the attribute*<br/>
+*If you add an another activity later, you must come here and add the attribute*
 
 7. To support tablet layout: Edit your style.xml file located in res/values and, inside the `<style>` tag, add: 
 ```xml
@@ -114,7 +114,7 @@ The TabsFragment handles:
 <item name="android:actionMenuTextColor">#fff</item><!--replace color-->
 <item name="android:textColorSecondary">#fff</item><!--replace color-->
 ```
-*Even if you don't want to support tablet interface, this setting is recommended to avoid warnings in the Framework* <br/>
+*Even if you don't want to support tablet interface, this setting is recommended to avoid warnings in the Framework*
 
 8.  **You are ready to go!**
 
