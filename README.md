@@ -89,29 +89,29 @@ The TabsFragment handles:
 #How to use it
 
 ## 1. Getting started & setup environment
-**1. ** Download the example project.
-**2. ** Open your existing project or create a new one (by clicking "File - New Project - Empty Activity").
-**3. ** Add the Module in your existing project. In Android Studio this is done by selecting "File - New - Import Module..."
+**1.** Download the example project.
+**2.** Open your existing project or create a new one (by clicking "File - New Project - Empty Activity").
+**3.** Add the Module in your existing project. In Android Studio this is done by selecting "File - New - Import Module..."
 ![alt-text-1](screenshots/importmodule.jpg "title-1")
 
-**4. ** Set the Source directory to the "basicframework" folder inside the example project you just downloaded, and click "Finish" (the entire folder will be copied to your project, so you don't need to move it)
+**4.** Set the Source directory to the "basicframework" folder inside the example project you just downloaded, and click "Finish" (the entire folder will be copied to your project, so you don't need to move it)
 <img src="screenshots/newmodule.jpg" width=500px/>
 
-**5. **  Add the BasicFramework dependency to your App. To do so:
+**5.**  Add the BasicFramework dependency to your App. To do so:
 	- Click "File - Project Structure".
 	- Select your App module in the left, select the tab "Dependencies".
 	- click the "+" button and select "Module dependency".
     - Select the ":basicFramework" dependency and click OK.
 	 <img src="screenshots/dependencies2.jpg" width=500px/>
 
-**6. ** To support device rotation: Edit your App's AndroidManifest.xml file and, in all the `<activity>` tags, add the `android:configChanges` attribute: 
+**6.** To support device rotation: Edit your App's AndroidManifest.xml file and, in all the `<activity>` tags, add the `android:configChanges` attribute: 
 ```xml
 <activity android:name=".YourMainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize">
 ```
 *If you add an another activity later, you must come here and add the attribute*
 
-**7. ** To support tablet layout: Edit your style.xml file located in res/values and, inside the `<style>` tag, add: 
+**7.** To support tablet layout: Edit your style.xml file located in res/values and, inside the `<style>` tag, add: 
 ```xml
 <item name="windowActionBar">false</item>
 <item name="windowNoTitle">true</item>
@@ -120,7 +120,7 @@ The TabsFragment handles:
 ```
 *Even if you don't want to support tablet interface, this setting is recommended to avoid warnings in the Framework*
 
-**8. **  **You are ready to go!**
+**8.**  **You are ready to go!**
 
 <div style="page-break-after:always;"></div>
 ##2. Using NavigationActivity
