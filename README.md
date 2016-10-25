@@ -90,7 +90,9 @@ The TabsFragment handles:
 
 ## 1. Getting started & setup environment
 **1.** Download the example project.
+
 **2.** Open your existing project or create a new one (by clicking "File - New Project - Empty Activity").
+
 **3.** Add the Module in your existing project. In Android Studio this is done by selecting "File - New - Import Module..."
 ![alt-text-1](screenshots/importmodule.jpg "title-1")
 
