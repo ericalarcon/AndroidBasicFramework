@@ -1,5 +1,5 @@
 #Android Basic Framework
-*(if you came from [this stackoverflow answer](http://stackoverflow.com/questions/3251934/android-uinavigationcontroller-like-feature#answer-39235105) and you found it useful, please leave an upvote in the post. This will encourage me A LOT to continue improving the framework)*
+*if you came from [this stackoverflow answer](http://stackoverflow.com/questions/3251934/android-uinavigationcontroller-like-feature#answer-39235105) and you found it useful, please leave an upvote or comment in the post. This will encourage me A LOT to continue improving the framework*
 
 **Author:** Eric Alarcón Cochin
 [eric@edorteam.com](mailto:eric@edorteam.com)
