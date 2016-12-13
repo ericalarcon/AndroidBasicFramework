@@ -4,16 +4,16 @@
 **Author:** Eric Alarcón Cochin
 [eric@edorteam.com](mailto:eric@edorteam.com)
 
-**Version:**  0.9.0
+**Version:**  0.9.1
 
 **First publishing date:** August 29, 2016
 
-**Updated:** October 24, 2016
+**Updated:** December 13, 2016
 
 ---
 #Introduction
 
-> BasicFramework is a set of tools that helps you build simple Android applications faster.
+> BasicFramework is a set of tools that helps you build Android applications faster.
 
 
 It contains three basic tools:

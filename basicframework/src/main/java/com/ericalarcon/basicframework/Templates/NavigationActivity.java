@@ -266,9 +266,13 @@ public abstract class NavigationActivity extends AppCompatActivity implements Se
             finish();
         }
 
+
         Fragment currentFragment = getFragmentsStack().get(getFragmentsStack().size()-1);
         //remove fragment from stack
-        getFragmentsStack().remove(currentFragment);
+        if(getFragmentsStack().size() > 1){ //never remove the first fragment
+            getFragmentsStack().remove(currentFragment);
+        }
+
 
         //restore the arrow back icon as home up indicator (that may have been previously replaced by a cross in pushFragment())
         if(getSupportActionBar() != null)

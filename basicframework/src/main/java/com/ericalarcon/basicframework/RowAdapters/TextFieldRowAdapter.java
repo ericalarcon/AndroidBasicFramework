@@ -1,3 +1,4 @@
+/*
 package com.ericalarcon.basicframework.RowAdapters;
 
 import android.content.Context;
@@ -14,10 +15,13 @@ import java.util.Arrays;
 
 @SuppressWarnings({"unused" , "WeakerAccess"})
 
+*/
 /**
+ * WARNING: THIS IS NOT WORKING
  * Created by erica on 15/07/2016.
  * custom adapter for rows with text field where user can write.
- */
+ *//*
+
 public abstract class TextFieldRowAdapter extends ArrayAdapter<String> {
     private final Context context;
 
@@ -27,10 +31,12 @@ public abstract class TextFieldRowAdapter extends ArrayAdapter<String> {
     public abstract void textChanged(String newText);
 
 
-    /*A ViewHolder implementation allows to avoid the (expensive) findViewById() method in an adapter.
+    */
+/*A ViewHolder implementation allows to avoid the (expensive) findViewById() method in an adapter.
     A ViewHolder class is typically a static inner class in your adapter which holds references to the relevant views. in your layout. This reference is assigned to the row view as a tag via the setTag() method.
     If we receive a convertView object, we can get the instance of the ViewHolder via the getTag() method and assign the new attributes to the views via the ViewHolder reference.
-    While this sounds complex this is approximately 15 % faster then using the findViewById() method.*/
+    While this sounds complex this is approximately 15 % faster then using the findViewById() method.*//*
+
     private static class ViewHolder {
         EditText textBox;
         View rowSeparator;
@@ -45,7 +51,8 @@ public abstract class TextFieldRowAdapter extends ArrayAdapter<String> {
     }
 
 
-    /**
+    */
+/**
      * Gets the view for the row in the position 'position' of the tableview.
      * This function is designed to be used only in UniversalRowAdapter Class
      * @param position
@@ -56,7 +63,8 @@ public abstract class TextFieldRowAdapter extends ArrayAdapter<String> {
      * Parent view(parameter given by the UniversalRowAdapter's getView)
      * @return
      * Row view
-     */
+     *//*
+
     @Override
     @NonNull
     public View getView(int position, View convertView,@NonNull ViewGroup parent) {
@@ -90,7 +98,6 @@ public abstract class TextFieldRowAdapter extends ArrayAdapter<String> {
 
                         String txt = viewHolder.textBox.getText().toString();
 
-
                         if (txt.equals("")) {
 
                             viewHolder.textBox.requestFocus();
@@ -113,3 +120,4 @@ public abstract class TextFieldRowAdapter extends ArrayAdapter<String> {
 
 }
 
+*/
