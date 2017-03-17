@@ -26,10 +26,10 @@ Let's see it with more detail:
 
 ## 1. NavigationActivity
 ![](screenshots/navigationactivity.jpg)
-<center>*NavigationActivity in phones* </center> 
+*NavigationActivity in phones*
 
 ![](screenshots/tabletscreenshot.jpg)
-<center> *NavigationActivity in tablets (combined with TabsFragment)*</center> 
+*NavigationActivity in tablets (combined with TabsFragment)*
 
 The NavigationActivity class implements a specialized Activity that manages the navigation of hierarchical content. A NavigationActivity object manages the currently displayed screens using the navigation stack, which is represented by an array of Fragments. The first Fragment in the array is the root Fragment. The last Fragment in the array is the Fragment currently being displayed. You add and remove Fragments from the stack using the methods of this class. It must be subclassed to implement abstract methods.
 
@@ -350,9 +350,8 @@ public class TabTest extends TabsFragment {
 That's it!
 
 
-
-
 <div style="page-break-after:always;"></div>
+
 ## 4. Using ListFragment
 
 ListFragment is an abstract class that inflates a layout with a ListView and attach an UniversalRowAdapter to it.
