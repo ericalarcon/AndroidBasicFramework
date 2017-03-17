@@ -1,5 +1,4 @@
-#Android Basic Framework
-*if you came from [this stackoverflow answer](http://stackoverflow.com/questions/3251934/android-uinavigationcontroller-like-feature#answer-39235105) and you found it useful, please leave an upvote or comment in the post. This will encourage me A LOT to continue improving the framework*
+# Android Basic Framework
 
 **Author:** Eric Alarcón Cochin
 [eric@edorteam.com](mailto:eric@edorteam.com)
@@ -11,7 +10,7 @@
 **Updated:** December 13, 2016
 
 ---
-#Introduction
+# Introduction
 
 > BasicFramework is a set of tools that helps you build Android applications faster.
 
@@ -126,7 +125,7 @@ The TabsFragment handles:
 **8.**  **You are ready to go!**
 
 <div style="page-break-after:always;"></div>
-##2. Using NavigationActivity
+## 2. Using NavigationActivity
 
 Keep in mind that **every Activity in your app** should extend NavigationActivity, because even though you don't plan to perform navigation, it will provide you the ActionBar menus and a back button to go back to the previous Activity (if necessary). This way your app will have a consistent interface.
 
@@ -163,7 +162,7 @@ public class NavigationTest extends NavigationActivity{
 }
 ```
 
-###Presenting a new Fragment
+### Presenting a new Fragment
 
 You can present a new fragment (with a nice animation) by calling the **pushFragment** method from NavigationActivity.
 
@@ -191,7 +190,8 @@ nav.pushFragment(f,NavigationActivity.animationType.RIGHT_TO_LEFT,false);
 
 You don't have to worry about implementing the back button behaviour. This is handled automatically by the NavigationActivity class.
 
-###Setting the ActionBar menu
+### Setting the ActionBar menu
+
 | ![alt-text-1](screenshots/actionbar_text.jpg "title-1") | ![alt-text-1](screenshots/actionbar_icon.jpg "title-1") |
 |--------|--------|
 |*ActionBar with one text button*        |   *ActionBar with one icon button*     |
@@ -224,7 +224,7 @@ selected".
  
 We can perform two operations to a BFMenu object:  **addItem** and **addSearchItem**. The first one will be a button (with icon or text) and the second will be a search widget.
 
-####addItem
+#### addItem
 
 To add a button first we need to create a BFMenuItem object:
 Function definition:
@@ -252,7 +252,7 @@ menu1.addItem(new BFMenuItem("Button name",
                 }
 }));
 ```
-####addSearchItem
+#### addSearchItem
 
 To add a button first we need to create a BFMenuSearchListener object:
 Function definition:
@@ -353,11 +353,11 @@ That's it!
 
 
 <div style="page-break-after:always;"></div>
-##4. Using ListFragment
+## 4. Using ListFragment
 
 ListFragment is an abstract class that inflates a layout with a ListView and attach an UniversalRowAdapter to it.
 
-###The UniversalRowAdapter class
+### The UniversalRowAdapter class
 
 You may be wondering: "and what is a UniversalRowAdapter"?
 A UniversalRowAdapter is a ListAdapter (obviously) that manages common things that can happen in a ListView, namely:
@@ -415,12 +415,12 @@ public void onCreateFinished()
 ```
 
 
-###public String title()
+### public String title()
 
 You have to return the title that will show in the ActionBar<br/>
 <img src="screenshots/actionbar_icon_title.jpg" width=300px/>
 
-###public String floatingActionButton()
+### public String floatingActionButton()
 
 ![](screenshots/floatingActionButton.jpg)
 *This is a Floating Action Button*
@@ -447,7 +447,7 @@ public FloatingButton floatingActionButton() {
 }
 ```
 
-###public UniversalRowAdapter getAdapter(Context context, ListView listview)
+### public UniversalRowAdapter getAdapter(Context context, ListView listview)
 You have to return a UniversalRowAdapter object, that must implement all the abstract methods:
 Function definition:
 ```java
@@ -563,10 +563,10 @@ Simply create a `new BasicRowAdapter` (or any other) and implement its abstract 
 
 <img src="screenshots/adapters.jpg" width=300px/>
 
-###public void onCreateFinished()
+### public void onCreateFinished()
 You can put your initialization code here. This is a good spot to instanciate your ListAdapters (BasicRowAdapter, DetailRowAdapter, etc.)
 
-###Other interesting methods of the UniversalRowAdapter class
+### Other interesting methods of the UniversalRowAdapter class
 From a ListFragment, you can acces the adapter instance by calling the variable `adapter` (for example: `adapter.resetAdapter()`)
 ```java
 public SectionIndex getSectionedPosition(Integer position)
@@ -590,7 +590,7 @@ public void resetAdapter()
 ```
 Refresh the list in case that some rows has been added
 
-#Final thoughts
+# Final thoughts
 
 The whole Android SDK has many shortcomings in comparison to Apple's Cocoa Touch Framework for iOS. This Framework is inspired by some Cocoa Framework features that make the programmer's life easier. 
 Particularly I found shocking the lack of a hierarchical navigation pattern, with an animation to provide sense of navigation, rather than launching new Activities every time. This was the main motivation to build this framework.
@@ -598,7 +598,7 @@ Particularly I found shocking the lack of a hierarchical navigation pattern, wit
 If you have any doubt don't hesitate to email me on [eric@edorteam.com](mailto:eric@edorteam.com)
 
 
-#Licence
+# Licence
 
 This framework is under the [Creative Commons Attribution 3.0 License](https://creativecommons.org/licenses/by/3.0/), which means you can:
 - Use it for personal stuff
@@ -607,11 +607,11 @@ This framework is under the [Creative Commons Attribution 3.0 License](https://c
 
 In exchange, just give me credit in your app (name and link to github).
 
-#Special thanks
+# Special thanks
 
 This Framework was developed partly in the company where I work: [Edor Team S.L.](http://www.edorteam.com/)
 
-#Future work
+# Future work
 
 - Add a **NavigationDrawer Fragment** (even though I don't like this navigation pattern, because it discourages information architecture and has lower discoverability)
 - Add **more RowAdapters**
