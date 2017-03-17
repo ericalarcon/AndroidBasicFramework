@@ -89,6 +89,7 @@ The TabsFragment handles:
 #How to use it
 
 ## 1. Getting started & setup environment
+
 **1.** Download the example project.
 
 **2.** Open your existing project or create a new one (by clicking "File - New Project - Empty Activity").
@@ -126,6 +127,7 @@ The TabsFragment handles:
 
 <div style="page-break-after:always;"></div>
 ##2. Using NavigationActivity
+
 Keep in mind that **every Activity in your app** should extend NavigationActivity, because even though you don't plan to perform navigation, it will provide you the ActionBar menus and a back button to go back to the previous Activity (if necessary). This way your app will have a consistent interface.
 
 How to use it:
@@ -162,6 +164,7 @@ public class NavigationTest extends NavigationActivity{
 ```
 
 ###Presenting a new Fragment
+
 You can present a new fragment (with a nice animation) by calling the **pushFragment** method from NavigationActivity.
 
 ```java
@@ -222,6 +225,7 @@ selected".
 We can perform two operations to a BFMenu object:  **addItem** and **addSearchItem**. The first one will be a button (with icon or text) and the second will be a search widget.
 
 ####addItem
+
 To add a button first we need to create a BFMenuItem object:
 Function definition:
 ```java
@@ -249,6 +253,7 @@ menu1.addItem(new BFMenuItem("Button name",
 }));
 ```
 ####addSearchItem
+
 To add a button first we need to create a BFMenuSearchListener object:
 Function definition:
 ```java
@@ -292,6 +297,7 @@ Finally we will just have to call the **addActionBarMenu** method of the Navigat
 
 <div style="page-break-after:always;"></div>
 ## 2. Using TabsFragment
+
 - Add a new java class in your project
 - Make it extend TabsFragment
 - Implement all the TabsFragment abstract methods (pro tip: in Android Studio if you click Alt + insert and select implement - methods all the function definitions are automatically generated)
@@ -348,9 +354,11 @@ That's it!
 
 <div style="page-break-after:always;"></div>
 ##4. Using ListFragment
+
 ListFragment is an abstract class that inflates a layout with a ListView and attach an UniversalRowAdapter to it.
 
 ###The UniversalRowAdapter class
+
 You may be wondering: "and what is a UniversalRowAdapter"?
 A UniversalRowAdapter is a ListAdapter (obviously) that manages common things that can happen in a ListView, namely:
 
@@ -408,10 +416,12 @@ public void onCreateFinished()
 
 
 ###public String title()
+
 You have to return the title that will show in the ActionBar<br/>
 <img src="screenshots/actionbar_icon_title.jpg" width=300px/>
 
 ###public String floatingActionButton()
+
 ![](screenshots/floatingActionButton.jpg)
 *This is a Floating Action Button*
 
@@ -581,6 +591,7 @@ public void resetAdapter()
 Refresh the list in case that some rows has been added
 
 #Final thoughts
+
 The whole Android SDK has many shortcomings in comparison to Apple's Cocoa Touch Framework for iOS. This Framework is inspired by some Cocoa Framework features that make the programmer's life easier. 
 Particularly I found shocking the lack of a hierarchical navigation pattern, with an animation to provide sense of navigation, rather than launching new Activities every time. This was the main motivation to build this framework.
 
@@ -588,6 +599,7 @@ If you have any doubt don't hesitate to email me on [eric@edorteam.com](mailto:e
 
 
 #Licence
+
 This framework is under the [Creative Commons Attribution 3.0 License](https://creativecommons.org/licenses/by/3.0/), which means you can:
 - Use it for personal stuff
 - Use it for commercial stuff
@@ -596,9 +608,11 @@ This framework is under the [Creative Commons Attribution 3.0 License](https://c
 In exchange, just give me credit in your app (name and link to github).
 
 #Special thanks
+
 This Framework was developed partly in the company where I work: [Edor Team S.L.](http://www.edorteam.com/)
 
 #Future work
+
 - Add a **NavigationDrawer Fragment** (even though I don't like this navigation pattern, because it discourages information architecture and has lower discoverability)
 - Add **more RowAdapters**
 - ~~Add **FloatingActionButton** to ListFragment~~
