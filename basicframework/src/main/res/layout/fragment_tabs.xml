@@ -31,6 +31,8 @@
             android:layout_height="wrap_content"
             app:tabSelectedTextColor="#ffffff"
             app:tabTextColor="#ffffff"
+            app:tabMaxWidth="0dp"
+            app:tabGravity="fill"
             />
 
     </android.support.design.widget.AppBarLayout>

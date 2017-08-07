@@ -315,6 +315,12 @@ public class TabTest extends TabsFragment {
 
     }
 
+	@Override
+    public TabGravityItemType getTabGravity() {
+        //return TabGravityItemType.FILL;
+        //return TabGravityItemType.CENTER;
+    }
+    
     @Override
     public String getTabTitle(int position) {
     	//return the tab title for each tab

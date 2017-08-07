@@ -21,6 +21,7 @@ import com.ericalarcon.basicframework.R;
 public abstract class TabsFragment extends Fragment {
     public abstract android.app.Fragment getTabFragment(int position);
     public abstract int getTabCount();
+    public abstract TabGravityItemType getTabGravity();
     public abstract String getTabTitle(int position);
     public abstract Integer getTabIcon(int position);
     public abstract Integer getTabIconTint(int position);
@@ -90,6 +91,15 @@ public abstract class TabsFragment extends Fragment {
             }
         }
 
+        //Set gravity of the tabs
+        if (getTabGravity() == TabGravityItemType.FILL){
+            tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
+        }
+        else if (getTabGravity() == TabGravityItemType.CENTER){
+            tabLayout.setTabGravity(TabLayout.GRAVITY_CENTER);
+
+        }
         //abstract method, in case the child wants to perform additional operations
         viewCreated();
         didSelectTab(tabLayout.getTabAt(0));
@@ -120,9 +130,8 @@ public abstract class TabsFragment extends Fragment {
     }
 
 
-
-
-
-
-
+    public enum TabGravityItemType{
+        FILL , // =0
+        CENTER // = 1
+    }
 }

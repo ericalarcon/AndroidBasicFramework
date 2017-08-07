@@ -91,6 +91,11 @@ public class AppTabsFragment extends TabsFragment{
     }
 
     @Override
+    public TabGravityItemType getTabGravity() {
+        return TabGravityItemType.FILL;
+    }
+
+    @Override
     public String getTabTitle(int position) {
         return "Tab " + (position+1);
     }
