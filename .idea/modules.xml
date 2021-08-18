@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidBasicFramework.iml" filepath="$PROJECT_DIR$/AndroidBasicFramework.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/basicframework/basicframework.iml" filepath="$PROJECT_DIR$/basicframework/basicframework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidBasicFramework.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidBasicFramework.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/basicframework/AndroidBasicFramework.basicframework.iml" filepath="$PROJECT_DIR$/.idea/modules/basicframework/AndroidBasicFramework.basicframework.iml" />
     </modules>
   </component>
 </project>
